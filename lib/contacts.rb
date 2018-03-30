@@ -18,10 +18,7 @@ def remove_strawberry(contacts)
   contacts.each do |person, data_hash|
     data_hash.each do |key, value|
       if key == :favorite_ice_cream_flavors
-        binding.pry
-        if favorite_ice_cream_flavors.include?("strawberry")
-          favorite_ice_cream_flavors -= "strawberry"
-        end
+        value.delete_if {|ice_cream| ice_cream == "strawberry"}
       end
     end
   end
